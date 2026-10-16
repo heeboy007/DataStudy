@@ -14,10 +14,11 @@ arr = np.arange(N, dtype=np.int64)
 cur_arr, _ = tracemalloc.get_traced_memory()
 tracemalloc.stop()
 
+v = arr[:] #view
+
 print(f"list: {cur_list/1e6:.1f}MB / ndarray {cur_arr/1e6:.1f}MB")
 print(arr.dtype, arr.itemsize, arr.nbytes)
-print(sys.getsizeof(arr), sys.getsizeof(arr.copy()))
-# 다르다면서 같은데요?
+print(sys.getsizeof(v), sys.getsizeof(arr)) # the view VS array itself
 print(np.arange(N, dtype=np.int8).nbytes)
 
 # list: 40.0MB / ndarray 8.0MB
