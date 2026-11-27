@@ -46,7 +46,7 @@ res = stats.f_oneway(df_a, df_b, df_c)
 print(round(res.statistic, 2))
 print(round(res.pvalue, 4))
 print(f"pvalue({res.pvalue}) is lesser than 0.05, means null hypo is rejected.")
-print("... means they do not have equal means for every group(aligns with 3)")
+print("... means at least one of the group's mean is different than others")
 
 #5
 print(math.floor(df_b.mean()))
